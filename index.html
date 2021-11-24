@@ -9,15 +9,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="fire.js" defer></script>
+    <!-- <script src="/js/jquery.js" defer></script> -->
 </head>
 <body>
+    <noscript>You need to enable JavaScript to run this website</noscript>
     <div id="container_audio">
         <audio id="bgm" preload="auto" autoplay loop>
             <source src="./audio/1. 21 - Extraordinary Emergency (body).mp3" type="audio/mpeg">
         </audio>
     </div>
-    <main>
-        <header>
+    <main class="scroll-container">
+        <nav id="navbar" class="scroll-area">
+            <img src="./images/logo_s.png" alt="">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li>
+                    <a href="#news">NEWS</a>
+                </li>
+                <li>
+                    <a href="#movies">MOVIES</a>
+                </li>
+                <li class="dropdown-btn">
+                    <a href="#">GAME</a>
+                    <div class="dropdown-content">
+                        <a href="#story">STORY</a>
+                        <a href="#character">CHARACTER</a>
+                        <a href="#music">MUSIC</a>
+                        <a href="#gameplay">GAMEPLAY</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#special">SPECIAL</a>
+                </li>
+                <li>
+                    <a href="#about">ABOUT</a>
+                </li>
+            </ul>
+        </nav>
+        <header id="home" class="scroll-area">
+            <div id="firebg">
+                <canvas width="2392" height="982" style="width: 1914px; height: 786px;"></canvas>
+            </div>
             <div id="share">
                 <img src="./images/header/icon_youtube.png" alt="">
                 <img src="./images/header/icon_twitter.png" alt="">
@@ -29,75 +62,83 @@
             <div id="sub-title">
                 <img src="./images/header/catch_text.png" alt="">
             </div>
+            <!-- <div id="arrow-down-btn">
+                <img src="./images/header/arrow_r2.png" alt="">
+            </div> -->
         </header>
-        <div id="footer-bg">
-            <img src="./images/header/kv_mask.png" alt="">
-        </div>
-        <article>
-            <nav></nav>
-            <div id="news-n-movies">
-                <div id="news">
+        
+        
+        <section class="news-n-movies scroll-area">
+            <div id="news">
+                <div class="news-header">
                     <h1>NEWS</h1>
-                    <a class="twitter-timeline" data-lang="en" data-width="400" data-height="600" data-theme="dark" data-chrome="noscrollbar" 
-                    href="https://twitter.com/animejujutsu?ref_src=twsrc%5Etfw"></a> 
-                    <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                <div id="movies">
+                    <a href="" target="_blank">FOLLOW</a>
+                </div>                
+                <img src="./images/body/special-border.png" alt="">
+                <a class="twitter-timeline" data-lang="en" data-width="450" data-height="500" data-theme="dark" data-chrome="noscrollbar" 
+                href="https://twitter.com/animejujutsu?ref_src=twsrc%5Etfw"></a> 
+                <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div id="movies">
+                <div class="movies-header">
                     <h1>MOVIES</h1>
-                    <div class="youtube-movie">
-                        <iframe width="520" height="300" src="https://www.youtube.com/embed/gUXg7QYn_lg" title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="520" height="300" src="https://www.youtube.com/embed/u9rT73uzVKI" title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <div id="story">
-                <h1>STORY</h1>
+                    <a href="" target="_blank">MORE</a>
+                </div> 
                 <img src="./images/body/special-border.png" alt="">
-                <p>
-                    辛酸・後悔・恥辱 <br>
-                    人間が生む負の感情は呪いと化し日常に潜む <br>
-                    呪いは世に蔓延る禍源であり、最悪の場合、人間を死へと導く <br>
-
-                    そして、呪いは呪いでしか祓えない <br>
-
-                    驚異的な身体能力を持つ、少年・虎杖悠仁はごく普通の高校生活を送っていたが、 <br>
-                    ある日“呪い”に襲われた学友を救うため、特級呪物“両面宿儺の指”を喰らい、己の魂に呪いを宿してしまう <br>
-
-                    呪いである“両面宿儺”と肉体を共有することとなった虎杖は、<br>
-                    最強の呪術師である五条 悟の案内で、対呪い専門機関である「東京都立呪術高等専門学校」へと <br>
-                    編入することになり…… <br>
-
-                    呪いを祓うべく呪いを宿した少年の後戻りのできない、壮絶な物語が廻りだす― <br>
-                </p>
-            </div>
-            <div id="character">
-                <h1>CHARACTER</h1>
-                <img src="./images/body/special-border.png" alt="">
-            </div>
-            <div id="music">
-                <h1>MUSIC</h1>
-                <img src="./images/body/special-border.png" alt="">
-                <div class="youtube-music">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1tk1pqwrOys" title="YouTube video player" frameborder="0" 
+                <div class="youtube-movie">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/gUXg7QYn_lg" title="YouTube video player" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AWEm4tA2hMc" title="YouTube video player" frameborder="0" 
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/u9rT73uzVKI" title="YouTube video player" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <div id="gameplay">
-                <h1>GAMEPLAY</h1>
-                <img src="./images/body/gameplay-border.png" alt="">
-                <p>Comming soon</p>
+        </section>
+        <section id="story" class="scroll-area">
+            <h1>STORY</h1>
+            <img src="./images/body/special-border.png" alt="">
+            <p>
+                「辛酸・後悔・恥辱」 <br><br>
+                人間が生む負の感情は呪いと化し日常に潜む <br>
+                呪いは世に蔓延る禍源であり、最悪の場合、人間を死へと導く <br><br>
+
+                そして、呪いは呪いでしか祓えない <br><br>
+
+                驚異的な身体能力を持つ、少年・虎杖悠仁はごく普通の高校生活を送っていたが、 <br>
+                ある日“呪い”に襲われた学友を救うため、特級呪物“両面宿儺の指”を喰らい、己の魂に呪いを宿してしまう <br><br>
+
+                呪いである“両面宿儺”と肉体を共有することとなった虎杖は、<br>
+                最強の呪術師である五条 悟の案内で、対呪い専門機関である「東京都立呪術高等専門学校」へと <br>
+                編入することになり…… <br>
+
+                呪いを祓うべく呪いを宿した少年の後戻りのできない、壮絶な物語が廻りだす― <br>
+            </p>
+        </section>
+        <section id="character" class="scroll-area">
+            <h1>CHARACTER</h1>
+            <img src="./images/body/special-border.png" alt="">
+        </section>
+        <section id="music" class="scroll-area">
+            <h1>MUSIC</h1>
+            <img src="./images/body/special-border.png" alt="">
+            <div class="youtube-music">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1tk1pqwrOys" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AWEm4tA2hMc" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div id="special">
-                <h1>SPECIAL</h1>
-                <img src="./images/body/special-border.png" alt="">
-                <p>Comming soon</p>
-            </div>
-        </article>
-        <footer>
+            <a href="" target="_blank">MORE</a>
+        </section>
+        <section id="gameplay" class="scroll-area">
+            <h1>GAMEPLAY</h1>
+            <img src="./images/body/gameplay-border.png" alt="">
+            <p>Comming soon</p>
+        </section>
+        <section id="special" class="scroll-area">
+            <h1>SPECIAL</h1>
+            <img src="./images/body/special-border.png" alt="">
+            <p>Comming soon</p>
+        </section>
+        <footer id="about" class="scroll-area">
             <div id="planning-n-development">
                 <h1>Planning & Development</h1>
                 <p>Duong - Kien - Hai - Ha</p>
@@ -120,13 +161,14 @@
             </div>
             <hr>
             <div id="information">
-                <p><a href="#">Privacy</a> | <a href="#">Guidelines for the Use of Intellectual Property</a><br>
-                Guidelines for the Use of Intellectual Property <br>
+                <p><a href="#">Privacy</a> | <a href="#">Guidelines for the Use of Intellectual Property</a><br><br>
                 Contact Us：support@group7.com <br><br>
                 2021 © Group 7, MUL.
                 </p>
             </div>
         </footer>
     </main>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 </body>
 </html>
