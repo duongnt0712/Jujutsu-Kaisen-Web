@@ -1,0 +1,1328 @@
+html,
+body {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    overflow: hidden;
+}
+
+html,
+body,
+main,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    background-color: #252720;
+}
+
+html::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+}
+
+.scroll-area {
+    scroll-snap-align: start;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* body, main {
+    pointer-events: none;
+} */
+
+.lity,
+#loader-wapper,
+button {
+    pointer-events: all;
+}
+
+
+/*==================================================== INTRO ====================================================*/
+
+#loader-wapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #252720;
+    z-index: 1000;
+    position: relative;
+}
+
+.preloader {
+    background-color: #252720;
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+    position: relative;
+    /* top: calc(50% - 32px); */
+    left: calc(50% - 32px);
+    border-radius: 50%;
+    perspective: 800px;
+}
+
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+.animate-loading {
+    text-align: center;
+    padding-top: 3vh;
+    font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px white;
+}
+
+
+/*==================================================== INTRO ANIMATION ====================================================*/
+
+.intro-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: #252720;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-wrapper h1.first-script,
+.intro-wrapper h1.second-script {
+    font-family: "Bigilla";
+    font-size: 200px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    width: 90%;
+    position: absolute;
+}
+
+.intro-wrapper .first-script .letter,
+.intro-wrapper .second-script .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.intro-wrapper .intro-img,
+.intro-wrapper .gojo-scripts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-wrapper .intro-img img,
+.intro-wrapper .gojo-hollow-purple img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-wrapper h1 {
+    font-weight: bolder;
+    font-size: 200px;
+    font-family: "Bigilla";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.intro-wrapper ul.blocks {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-wrapper li.block {
+    height: 100vh;
+}
+
+.intro-wrapper .block-1 {
+    width: 0.2%;
+    margin: 0 10px;
+    background: #da0510;
+}
+
+.intro-wrapper .block-2 {
+    width: 1.4%;
+    margin: 0 200px 0 20px;
+    background: #2001fe;
+}
+
+.intro-wrapper .block-3 {
+    width: 0.8%;
+    margin: 0 40px;
+    background: #01fefe;
+}
+
+.intro-wrapper .block-4 {
+    width: 2%;
+    margin: 0 400px;
+    background: #00fe00;
+}
+
+.intro-wrapper .block-5 {
+    width: 0.8%;
+    margin: 0 20px;
+    background: #f4f315;
+}
+
+.intro-wrapper .block-6 {
+    width: 2.8%;
+    background: #fa04f9;
+}
+
+.skip-intro-btn {
+    bottom: 3vh;
+    right: 3vw;
+    padding: 1vh 2vw;
+    border: 0.5px solid black;
+    background: none;
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+    position: absolute;
+    z-index: 10;
+}
+
+.skip-intro-btn:hover {
+    background-color: white;
+    transition: 0.5s ease-in;
+}
+
+
+/*==================================================== HEADER ====================================================*/
+
+.fade-in {
+    animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.6s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: url(./images/header/movingbg/Bg.png) no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -2;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: all;
+    object-fit: contain;
+}
+
+#share {
+    display: flex;
+    justify-content: end;
+    margin-right: 2vw;
+    padding-top: 5vh;
+    height: 5vh;
+    position: relative;
+    z-index: 10;
+}
+
+#share a {
+    position: relative;
+    z-index: 100;
+    height: 5vh;
+    margin-right: 1vw;
+}
+
+#share a:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+#share img {
+    height: 5vh;
+}
+
+#title,
+#title img,
+#sub-title,
+#arrow-down-btn {
+    position: relative;
+    z-index: 2;
+}
+
+#title,
+#title:after,
+#title:before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin-top: -4vh;
+    width: auto;
+    height: 75vh;
+}
+
+#title:after,
+#title:before {
+    content: "";
+    position: absolute;
+    background: url(./images/header/logo_h.png) no-repeat center;
+    background-size: contain;
+    height: 75vh;
+    width: 100%;
+    opacity: 0.8;
+}
+
+#title:after {
+    animation: skew 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    z-index: 1;
+}
+
+#title:before {
+    animation: flicker 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    z-index: 3;
+}
+
+#title img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#sub-title {
+    display: flex;
+    justify-content: center;
+    height: 14vh;
+}
+
+#sub-title:before,
+#sub-title:after {
+    content: '';
+    background: url(./images/header/catch_text.png) no-repeat center;
+    background-size: contain;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    height: 14vh;
+}
+
+#sub-title:before {
+    animation: flicker 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    z-index: 3;
+}
+
+#sub-title:after {
+    animation: skew 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    z-index: 1;
+}
+
+#release-noti {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    position: absolute;
+    bottom: 10vh;
+    right: 8vw;
+    z-index: 100;
+}
+
+#release-noti a>img {
+    width: 10vw;
+}
+
+header::after {
+    content: '';
+    height: 50%;
+    width: 100%;
+    display: block;
+    background: url(./images/header/kv_mask.png) bottom no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    margin-bottom: -13vh;
+    bottom: 0;
+    z-index: 0;
+}
+
+#firebg {
+    position: absolute;
+    z-index: 1;
+}
+
+.moving-background {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moving-background img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+@keyframes flicker {
+    0% {
+        filter: hue-rotate(0deg);
+        opacity: 0;
+        transform: translateX(0);
+    }
+    89% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    90% {
+        opacity: 0.9;
+        transform: translateX(2px);
+    }
+    91% {
+        transform: translateX(0);
+    }
+    92% {
+        filter: hue-rotate(0deg);
+        transform: translateX(-1px);
+    }
+    93% {
+        filter: hue-rotate(30deg);
+        transform: translateX(-2px);
+    }
+    95% {
+        filter: blur(1px);
+        transform: translateX(6px);
+    }
+    97% {
+        filter: hue-rotate(5deg);
+        transform: translateX(-1px);
+    }
+    98% {
+        filter: blur(0px);
+        filter: hue-rotate(0deg);
+        transform: translateX(2px);
+    }
+    99% {
+        opacity: 0.9;
+        transform: translateX(-3px);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes skew {
+    0% {
+        opacity: 0.7;
+        transform: skew(0deg, 0deg);
+    }
+    10% {
+        transform: skew(0deg, 0deg);
+    }
+    12% {
+        filter: hue-rotate(0deg);
+        transform: skew(-15deg, 0deg);
+    }
+    14% {
+        filter: hue-rotate(-10deg);
+        opacity: 0.5;
+        transform: skew(15deg, 0deg);
+    }
+    16% {
+        filter: hue-rotate(25deg);
+        opacity: 0.7;
+        transform: skew(0deg, 0deg);
+    }
+    17% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: skew(0deg, 0deg);
+    }
+}
+
+
+/*==================================================== MENU BAR ====================================================*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: all;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    width: 200px;
+    position: relative;
+    text-align: right;
+}
+
+.navbar ul li .dot {
+    color: #fff;
+    display: block;
+    padding: 1px 0;
+}
+
+.navbar ul li .dot span {
+    display: inline-block;
+    color: #333;
+    background: #fff;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    margin-right: 30px;
+    border-radius: 3px;
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.navbar ul li:hover .dot span {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.navbar ul li .dot span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(7px, -50%);
+    border-left: 7px solid #fff;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    display: block;
+}
+
+.navbar ul li .dot::before,
+.navbar ul li .dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    display: block;
+    transition: .2s ease-out;
+}
+
+.navbar ul li .dot::before {
+    height: 5px;
+    width: 5px;
+    border: 2px solid #333;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.navbar ul li .dot.active::before,
+.navbar ul li:hover .dot::before {
+    border-color: #fff;
+    background: #fff;
+}
+
+.navbar ul li .dot::after {
+    height: 15px;
+    width: 15px;
+    border: 2px solid #fff;
+    right: -5px;
+    transform: translateY(-50%) scale(0);
+}
+
+.navbar ul li .dot.active::after,
+.navbar ul li:hover .dot::after {
+    transform: translateY(-50%) scale(1);
+}
+
+
+/*==================================================== NEWS AND MOVIES ====================================================*/
+
+.news-n-movies {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 20vh;
+    object-fit: contain;
+}
+
+.news-n-movies .img-border {
+    width: 85%;
+    padding-bottom: 2vh;
+}
+
+.news-n-movies h1 {
+    font-size: 65px;
+    letter-spacing: 4px;
+}
+
+#news,
+#movies {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    letter-spacing: 4px;
+    padding-top: 7vh;
+    padding-left: 10vh;
+}
+
+.news-header,
+.movies-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1vh;
+    padding-right: 10vh;
+}
+
+.news-header a,
+.movies-header a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 0.1px solid #5e5e5e;
+    padding: 1.3vh 1.5vw;
+}
+
+.movies-header a {
+    padding: 1.3vh 2.2vw;
+}
+
+.news-header a:hover,
+.movies-header a:hover {
+    background-color: #888;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.youtube-movie {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.youtube-movie a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    border: black;
+    overflow: hidden;
+}
+
+.youtube-movie a img {
+    width: 30vw;
+    height: 35vh;
+    transition: transform .8s ease;
+}
+
+.youtube-movie a:hover img {
+    transform: scale(1.35);
+}
+
+.youtube-movie i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 33%;
+    background: url(./images/body/callabo_btn_play.png) no-repeat;
+    background-size: 100%;
+    border: black;
+}
+
+
+/*==================================================== STORY ====================================================*/
+
+#story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: -2;
+    object-fit: contain;
+}
+
+#story::before {
+    content: '';
+    height: 45%;
+    width: 100%;
+    background: url(./images/body/story_bg.png) top no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+#story::after {
+    content: '';
+    height: 45%;
+    background: url(./images/body/story_bg.png) top no-repeat;
+    background-size: cover;
+    width: 100%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+#story h1 {
+    position: relative;
+    font-size: 65px;
+    letter-spacing: 4px;
+    text-align: center;
+    z-index: 4;
+}
+
+#story img {
+    position: relative;
+    padding: 2vh 25vw;
+    width: 40%;
+    z-index: 4;
+}
+
+#story p {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    font-family: 游明朝体, yumincho, 游明朝, yu mincho, ヒラギノ明朝 pron w3, hiragino mincho pron w3, HiraMinProN-W3, ヒラギノ明朝 pron, hiragino mincho pron, ヒラギノ明朝 pro, hiragino mincho pro, hgs明朝e, ＭＳ Ｐ明朝, ms pmincho, serif;
+    font-size: 20px;
+    background-color: none;
+    transition: all 0.5s ease-out;
+}
+
+
+/*==================================================== CHARACTER ====================================================*/
+
+#character {
+    background: url(./images/body/char-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: bottom 25% right 0%;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+#character h1 {
+    font-size: 80px;
+    letter-spacing: 4px;
+    margin-top: 20vh;
+    padding-left: 5vw;
+}
+
+#character img {
+    width: 80%;
+    padding: 2vh 5vw;
+}
+
+.character-slider {
+    width: 100%;
+    height: 65vh;
+    margin-top: -30vh;
+    position: relative;
+    z-index: 0;
+}
+
+.character-detail,
+.character-detail div {
+    width: 100%;
+}
+
+.character-detail {
+    padding-top: 30vh;
+    position: relative;
+    z-index: 5;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.character-image {
+    height: 150vh;
+    margin-top: -35vh;
+}
+
+.character-info {
+    padding-left: 5vw;
+    font-size: 21px;
+    font-family: 游明朝体, yumincho, 游明朝, yu mincho, ヒラギノ明朝 pron w3, hiragino mincho pron w3, HiraMinProN-W3, ヒラギノ明朝 pron, hiragino mincho pron, ヒラギノ明朝 pro, hiragino mincho pro, hgs明朝e, ＭＳ Ｐ明朝, ms pmincho, serif;
+}
+
+.character-info p {
+    margin-bottom: 5vh;
+    letter-spacing: 4px;
+}
+
+.character-info h2 {
+    font-size: 50px;
+}
+
+#slider ul,
+#slider ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#slider {
+    position: absolute;
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+    border-radius: 4px;
+}
+
+#slider ul {
+    position: relative;
+    height: 200px;
+    list-style: none;
+}
+
+#slider ul li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 500px;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 300px;
+}
+
+#slider ul li::marker {
+    display: none;
+}
+
+a.control_prev,
+a.control_next {
+    position: absolute;
+    top: 60%;
+    /* z-index: 999; */
+    /* display: block; */
+    padding: 2vh 2vw;
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+a.control_prev {
+    left: 10vh;
+}
+
+a.control_next {
+    right: 10vh;
+}
+
+a.control_prev:hover,
+a.control_next:hover {
+    opacity: 1;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+
+a.control_prev {
+    border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+}
+
+
+/*==================================================== MUSIC ====================================================*/
+
+#music {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+}
+
+#music h1 {
+    font-size: 80px;
+    letter-spacing: 4px;
+    padding-left: 5vw;
+    color: black;
+    margin-top: 10vh;
+    position: relative;
+    z-index: 1;
+}
+
+#music .border-img {
+    width: 23%;
+    padding: 2vh 5vw;
+    transform: scaleX(-1);
+}
+
+#music p {
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding-left: 5vw;
+    color: black;
+    margin-bottom: 10vh;
+    position: relative;
+    z-index: 1;
+}
+
+.youtube-music {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5vw;
+    margin-bottom: 3vh;
+}
+
+.youtube-music a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5vw;
+    border: black;
+    overflow: hidden;
+}
+
+.youtube-music a img {
+    position: relative;
+    width: 25vw;
+    height: 33vh;
+    transition: transform .8s ease;
+}
+
+.youtube-music a:hover img {
+    transform: scale(1.35);
+}
+
+.youtube-music i {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transform: translate(-40%, -40%);
+    width: 20%;
+    height: 33%;
+    background: url(./images/body/callabo_btn_play.png) no-repeat;
+    background-size: 100%;
+    border: black;
+}
+
+.youtube-music iframe {
+    padding-right: 2vw;
+}
+
+#music .btn-more {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: 0.1px solid black;
+    width: 4vw;
+    padding: 2vh 4vw;
+    margin: 0 5vw;
+    position: absolute;
+    right: 0;
+    bottom: 3vh;
+    /* background-color: #ccc; */
+}
+
+#music .btn-more:hover {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+#music .video-bg {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+}
+
+#music video {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+}
+
+
+/*==================================================== GAMEPLAY ====================================================*/
+
+#gameplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+    background-image: url(./images/body/intro_bg.6fac2da.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#gameplay h1 {
+    font-size: 65px;
+    letter-spacing: 4px;
+}
+
+#gameplay .border img {
+    width: 25%;
+    padding: 2vh 25vw;
+}
+
+.gameplay-introduction {
+    margin-bottom: 5vh;
+    font-size: 18px;
+    font-family: 游明朝体, yumincho, 游明朝, yu mincho, ヒラギノ明朝 pron w3, hiragino mincho pron w3, HiraMinProN-W3, ヒラギノ明朝 pron, hiragino mincho pron, ヒラギノ明朝 pro, hiragino mincho pro, hgs明朝e, ＭＳ Ｐ明朝, ms pmincho, serif;
+}
+
+.gameplay-slider {
+    width: 40vw;
+    height: 50vh;
+}
+
+.gameplay-slider img {
+    width: 100%;
+}
+
+.slick-slide {
+    display: flex;
+}
+
+.slick-dots {
+    color: white;
+}
+
+
+/*==================================================== SPECIAL ====================================================*/
+
+#special {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    object-fit: contain;
+}
+
+#special {
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+    background-image: url(./images/body/special_bg.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+#special h1 {
+    font-size: 65px;
+    letter-spacing: 4px;
+}
+
+#special img {
+    width: 25%;
+    padding: 2vh 25vw;
+    position: relative;
+    z-index: 1;
+}
+
+
+/*==================================================== FOOTER ====================================================*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #252720;
+    object-fit: contain;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 10vh;
+    position: relative;
+    z-index: 5;
+}
+
+footer #text-bg {
+    position: relative;
+    height: 0;
+    z-index: 0;
+}
+
+footer #text-bg h1 {
+    font-family: 'Papyrus', fantasy;
+    margin-top: -30vh;
+    padding-bottom: 20vh;
+    font-size: 27vh;
+    color: #2A2C23;
+    white-space: nowrap;
+    font-style: italic;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    animation: infiniteText 50s linear infinite;
+}
+
+footer #text-bg h1:nth-child(2) {
+    animation: reverseInfiniteText 50s linear infinite;
+}
+
+footer #text-bg h1:nth-child(3) {
+    animation: infiniteText 50s linear infinite;
+}
+
+footer #text-bg h1:nth-child(4) {
+    animation: reverseInfiniteText 50s linear infinite;
+}
+
+@keyframes infiniteText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes reverseInfiniteText {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+footer div h1 {
+    font-size: 22px;
+}
+
+footer hr {
+    color: white;
+    width: 10%;
+    position: relative;
+    z-index: 5;
+}
+
+#platform p {
+    margin: 14px 0;
+}
+
+#platform a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 5px 20px;
+    margin-left: 5px;
+    transition: 0.5s;
+}
+
+#platform a:hover {
+    color: black;
+    background-color: white;
+}
+
+#platform,
+#title-game {
+    margin-bottom: 3vh;
+}
+
+#information {
+    margin-top: 3vh;
+    font-size: 14px;
+}
+
+#information a {
+    color: white;
+    text-decoration: none;
+}
+
+#information a:hover {
+    text-decoration: underline;
+}

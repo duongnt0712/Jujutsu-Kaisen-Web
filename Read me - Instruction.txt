@@ -1,0 +1,4 @@
+1. Open cmd with the path to the project
+2. Install node_modules file using 'npm install' 
+3. Use syntax 'nodemon server.js' to run the server
+4. Open project in localhost:3000
