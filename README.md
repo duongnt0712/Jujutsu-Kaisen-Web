@@ -2,7 +2,7 @@
 ### MUL Project 
 Based on original website, we designed our own website for final project at university. 
 
-All the image, music and content are not belong to us. Check out the official website: [Jujutsu Kaisen Phantom Parade](https://jujutsuphanpara.jp/)
+All the images, musics and content are not belong to us. Check out the official website: [Jujutsu Kaisen Phantom Parade](https://jujutsuphanpara.jp/)
 
 ## Software and Libraries
 1. Software: Adobe (Photoshop / AE / Audition)
